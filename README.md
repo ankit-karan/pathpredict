@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+# PathPredict – Internship Readiness & Career Intelligence Platform
 
-## Project info
+PathPredict is an AI-powered career guidance platform that helps students find
+internships they can actually get by analyzing their skills, academic year,
+and availability. Instead of listing random internships, PathPredict provides
+clarity, readiness prediction, and a clear learning path.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## Problem Statement
 
-There are several ways of editing your application.
+Many students fail to secure internships not because they lack potential, but
+because they lack clarity:
+- Which internships are they eligible for?
+- What skills are missing?
+- Should they apply now or upskill first?
+- How long will it take to become internship-ready?
 
-**Use Lovable**
+Existing platforms mostly list opportunities without personalized guidance.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Solution
 
-**Use your preferred IDE**
+PathPredict acts as a **decision-making system**, not just an internship portal.
+It evaluates student profiles, predicts readiness, highlights skill gaps, and
+guides students with actionable next steps.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Key Features
 
-Follow these steps:
+- Student profile intake (year, skills, role, weekly hours)
+- Internship search portal (API-ready)
+- Internship readiness score (0–100)
+- Apply Now / Upskill First decision
+- Missing skills identification
+- Career path & timeline prediction
+- What-if simulator (add skills or time)
+- Internship comparison mode
+- LinkedIn-based mentorship guidance
+- Protected routes with authentication
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## System Architecture
 
-# Step 3: Install the necessary dependencies.
-npm i
+Frontend (React + TypeScript)
+        ↓
+Google Cloud Function (Backend API)
+        ↓
+Google ADK-based Agent Orchestration
+        ↓
+Gemini AI Reasoning
+        ↓
+JSON Response → Dashboard UI
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## Google Technologies Used
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 1. Gemini CLI (Google CLI)
 
-**Use GitHub Codespaces**
+Gemini CLI was used during development for **prompt engineering and validation**.
+Career reasoning prompts were tested using `gemini chat`. During testing, the
+free-tier quota was exhausted, confirming real API usage.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+### 2. Google ADK (Agent Development Kit – Conceptual Implementation)
 
-This project is built with:
+PathPredict follows **Google ADK principles** using a multi-agent architecture.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Agents used:
+- Profile Agent – processes student input
+- Skill Match Agent – compares skills with role requirements
+- Readiness Agent – calculates readiness score
+- Timeline Agent – predicts preparation time
+- Decision Agent – determines Apply or Upskill decision
 
-## How can I deploy this project?
+All agents are orchestrated through a central controller.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+### 3. Google Cloud
 
-Yes, you can!
+The backend is deployed as a **Google Cloud Function** using Node.js.  
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## How It Works
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. Student logs in and enters profile details
+2. Frontend sends data to Google Cloud backend
+3. ADK agents process the data step by step
+4. Gemini AI generates reasoning and explanation
+5. Backend returns readiness, decision, and timeline
+6. Frontend dashboard displays results
+
+---
+
+## Tech Stack
+
+- Frontend: React, TypeScript, Tailwind CSS
+- Backend: Node.js, Google Cloud Functions
+- AI: Gemini API
+- Architecture: Google ADK (agent-based)
+- Authentication: Context-based auth
+
+---
+
+## Why PathPredict Is Different
+
+- Not just an internship listing platform
+- Not generic career advice
+- A clarity-driven decision system
+- Predicts readiness and timelines
+- Explains why a student should apply or upskill
+
+---
+
+## Judge Summary
+
+PathPredict uses **Gemini CLI** for prompt engineering, **Google ADK** for
+agent-based decision logic, and **Google Cloud Functions** to deploy a real,
+scalable AI-powered backend for internship readiness prediction.
+
+---
+
+## Author
+
+Ankit  
+PathPredict – Career Intelligence Platform
+the frontend.
+
+---
